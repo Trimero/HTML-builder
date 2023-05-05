@@ -8,24 +8,24 @@ const rl = readline.createInterface({
 let text = '';
 
 function writeFile(text) {
-    fs.appendFile(path.join(__dirname, 'text.txt'), text, (err) => {
-        if (err) {
-            throw err;
-        }
-      });
+  fs.appendFile(path.join(__dirname, 'text.txt'), text, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
 }
 
 function enterYouText() {
-    rl.question('Введите ваш текст: ', (answer) => {
-      if (answer === 'exit') {
-          exit();
-      } else {
-        text += answer + '\n';
-        writeFile(text);
-        enterYouText();
-      }
-    });
-  }
+  rl.question('Введите ваш текст: ', (answer) => {
+    if (answer === 'exit') {
+      exit();
+    } else {
+      text += answer + '\n';
+      writeFile(text);
+      enterYouText();
+    }
+  });
+}
 
 function exit() {
   console.log('\nВсего хорошего!');
