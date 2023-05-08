@@ -101,7 +101,7 @@ async function copyDirRecursive(sourceDir, targetDir) {
   }
 }
 
-// Запустить все задачи в нужном порядке
+
 async function build() {
   await createDistFolder();
   await modifyTemplateFile();
